@@ -1,0 +1,27 @@
+import pytest
+from main import reverse_string
+
+
+def test_normal():
+    assert reverse_string("hello") == "olleh"
+
+
+def test_empty():
+    assert reverse_string("") == ""
+
+
+def test_one_char():
+    assert reverse_string("a") == "a"
+
+
+def test_spaces():
+    assert reverse_string("hello world") == "dlrow olleh"
+
+
+def test_palindrome():
+    assert reverse_string("madam") == "madam"
+
+
+def test_error():
+    with pytest.raises(ValueError):
+        reverse_string(123)
